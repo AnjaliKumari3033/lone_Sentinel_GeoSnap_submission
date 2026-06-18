@@ -1,0 +1,23 @@
+Model,Epoch,Train Loss,Train Accuracy (%),Val Loss,Val Accuracy (%)
+rgb_efficientnetb0,1,0.582,80.7,0.308,90.0
+rgb_efficientnetb0,2,0.326,88.8,0.222,93.1
+rgb_efficientnetb0,3,0.276,90.6,0.188,93.9
+rgb_efficientnetb0,4,0.249,91.5,0.198,93.2
+rgb_efficientnetb0,5,0.236,92.1,0.177,94.1
+rgb_efficientnetb0,6,0.221,92.5,0.165,94.9
+rgb_efficientnetb0,7,0.215,92.8,0.179,94.3
+rgb_efficientnetb0,8,0.199,93.2,0.172,94.2
+rgb_efficientnetb0,9,0.187,93.5,0.179,94.6
+rgb_efficientnetb0,10,0.187,93.5,0.162,94.7
+rgb_efficientnetb0,11,0.153,94.9,0.15,95.4
+rgb_efficientnetb0,12,0.148,94.6,0.152,95.1
+rgb_efficientnetb0,13,0.14,95.0,0.156,95.0
+rgb_efficientnetb0,14,0.146,94.8,0.138,95.4
+rgb_efficientnetb0,15,0.136,95.4,0.145,95.3
+rgb_efficientnetb0,16,0.121,95.6,0.14,95.4
+rgb_efficientnetb0,17,0.113,95.9,0.136,95.6
+rgb_efficientnetb0,18,0.111,96.1,0.138,95.4
+rgb_efficientnetb0,19,0.104,96.3,0.135,95.5
+rgb_efficientnetb0,20,0.109,96.1,0.133,95.5
+rgb_efficientnetb0,21,0.101,96.4,0.137,95.7
+rgb_efficientnetb0,22,0.103,96.4,0.138,95.8

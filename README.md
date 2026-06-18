@@ -46,7 +46,7 @@ EuroSAT_Dataset/
 │
 ├── train.csv
 └── validation.csv
-```text
+```
 
 ## 🧠 Models Used
 
