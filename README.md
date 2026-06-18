@@ -31,7 +31,7 @@ The dataset contains Sentinel-2 satellite images belonging to 10 land cover clas
 - SeaLake
 
 ### Dataset Structure
-
+```text
 EuroSAT_Dataset/
 │
 ├── EuroSAT/
@@ -46,6 +46,7 @@ EuroSAT_Dataset/
 │
 ├── train.csv
 └── validation.csv
+```text
 
 ## 🧠 Models Used
 
@@ -66,7 +67,7 @@ Custom CNN architecture with:
 - Fully Connected Classification Layer
 
 ## 📁 Project Structure
-
+```text
 GEO-SNAP/
 │
 ├── checkpoints/
@@ -96,8 +97,8 @@ GEO-SNAP/
 ├── requirements.txt
 │
 └── README.md
-
-# 📊 Exploratory Data Analysis (01_eda.ipynb)
+```
+# 📊 Exploratory Data Analysis (eda.ipynb)
 
 The notebook includes:
 
@@ -119,7 +120,7 @@ Generated figures:
 - multispectral_bands.png
 - spectral_signatures.png
 
-# 🔍 Explainability (04_explainability.ipynb)
+# 🔍 Explainability (explainability.ipynb)
 
 ## Grad-CAM
 
@@ -168,7 +169,7 @@ Generated figures:
 - rgb_confusion_matrix.png
 - ms_confusion_matrix.png
 
-# 🌱 Environmental Insights (05_environmental_insights.ipynb)
+# 🌱 Environmental Insights (environmental_insights.ipynb)
 
 Environmental analysis performed using multispectral imagery.
 
