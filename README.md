@@ -74,12 +74,15 @@ GEO-SNAP/
 │   ├── rgb_best.pth
 │   └── ms_best.pth
 │
+├── EuroSAT_Dataset/
+│
 ├── models/
 │   ├── rgb_model.py
 │   └── ms_model.py
 │
 ├── Notebooks/
 │   ├── eda.ipynb
+│   ├── training_analysis.ipynb
 │   ├── rgb_efficientnetb0.ipynb
 │   ├── Multispectral.ipynb
 │   ├── explainability.ipynb
@@ -90,7 +93,9 @@ GEO-SNAP/
 │   ├── predictions/
 │   └── reports/
 │
-├── EuroSAT_Dataset/
+├── training_logs/
+│   ├── training_logs_efficientnet.csv
+│   └── training_logs_multispectral.csv
 │
 ├── ms_band_stats.json
 │
@@ -119,6 +124,27 @@ Generated figures:
 - rgb_means_per_class.png
 - multispectral_bands.png
 - spectral_signatures.png
+
+# 📈 Training Analysis (training_analysis.ipynb)
+
+This notebook analyzes the training performance of both models.
+
+It includes:
+
+- Training and validation loss curves for the RGB model
+- Training and validation accuracy curves for the RGB model
+- Training and validation loss curves for the multispectral model
+- Training and validation accuracy curves for the multispectral model
+- Best validation accuracy highlighted on the accuracy plots
+- Model comparison table
+- Combined RGB vs Multispectral validation accuracy plot
+- Classification reports for both models
+
+Generated figures:
+
+- rgb_training_curves.png
+- ms_training_curves.png
+- model_comparison.png
 
 # 🔍 Explainability (explainability.ipynb)
 
@@ -264,6 +290,7 @@ Run notebooks in the following order:
 eda.ipynb
 rgb_efficientnetb0.ipynb
 Multispectral.ipynb
+training_analysis.ipynb
 explainability.ipynb
 environmental_insights.ipynb
 
@@ -276,11 +303,14 @@ Ensure that:
 # 📁 Outputs
 The project generates:
 
+- Training and validation plots
+- Model comparison plots
 - Classification figures
 - Grad-CAM visualizations
 - Confusion matrices
 - Band importance plots
 - Environmental analysis plots
+- Prediction CSV files
 - Feature CSV files
 
 All outputs are saved inside:

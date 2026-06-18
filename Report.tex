@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Geo-SNAP Project Report},
+}
+
+\title{\textbf{Geo-SNAP Project Report} \\ \large Geospatial Scene Classification using RGB and Multispectral Satellite Images}
+\author{Team Aurora Submission}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Geo-SNAP project leverages the EuroSAT dataset to build an intelligent deep learning framework capable of classifying land-use from satellite imagery. This report details the comparative analysis between standard RGB images and Multispectral images, highlighting the value of non-visible spectral information in improving geospatial intelligence, alongside model explainability and environmental insights.
+\end{abstract}
+
+\section{Introduction \& Problem Statement}
+Satellite imagery forms the backbone of modern geospatial intelligence. The \textbf{Geo-SNAP} project aims to build an intelligent deep learning framework capable of classifying land-use from satellite imagery while providing explainability for its predictions. By utilizing Sentinel-2 satellite data, the project effectively compares the performance of standard RGB images (3 channels) against Multispectral images (13 channels) to demonstrate how non-visible spectral information improves scene classification.
+
+\section{Dataset Overview}
+The project utilizes the \textbf{EuroSAT} dataset, containing $64 \times 64$ pixel patches of Sentinel-2 satellite images.
+
+\begin{itemize}
+    \item \textbf{Land-Cover Classes (10):} AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial, Pasture, PermanentCrop, Residential, River, and SeaLake.
+    \item \textbf{Data Splits:}
+    \begin{itemize}
+        \item \textbf{Training Set:} 18,900 samples
+        \item \textbf{Validation Set:} 4,050 samples
+        \item \textbf{Test Set:} 4,050 samples
+    \end{itemize}
+    \item The dataset is perfectly balanced across classes, ensuring the model does not develop a bias toward a specific land-use type.
+\end{itemize}
+
+\section{Environmental Insights \& Feature Engineering}
+To understand the spectral characteristics of the different land-cover types, specific remote sensing indices were calculated. This transformed raw satellite bands into meaningful environmental metrics:
+
+\begin{itemize}
+    \item \textbf{NDVI (Normalized Difference Vegetation Index):} Computed using the Red (B4) and Near-Infrared (B8) bands. It effectively highlights vegetation health, showing high values for classes like \textit{Forest} and \textit{AnnualCrop}.
+    \item \textbf{NDWI (Normalized Difference Water Index):} Computed using Green (B3) and NIR (B8) bands, isolating water bodies like \textit{River} and \textit{SeaLake}.
+    \item \textbf{NDBI (Normalized Difference Built-up Index):} Computed using Shortwave Infrared (B11) and NIR (B8) bands, easily distinguishing man-made structures in \textit{Industrial} and \textit{Residential} areas.
+\end{itemize}
+
+These 3 indices were combined with the mean values of the 13 raw bands to create a structured tabular dataset of size $(18900, 18)$ for deeper environmental analysis.
+
+\section{Modeling Approach}
+The project tackles the classification task using two distinct architectures tailored to the image modalities:
+
+\subsection{RGB Model}
+\begin{itemize}
+    \item \textbf{Architecture:} Transfer learning utilizing \textbf{EfficientNet-B0}.
+    \item \textbf{Input:} Standard 3-channel RGB images.
+    \item \textbf{Performance:} Learned rapidly, achieving high validation accuracy (reaching $\sim$93.8\% by epoch 3) but struggled slightly with visually similar classes.
+\end{itemize}
+
+\subsection{Multispectral Model}
+\begin{itemize}
+    \item \textbf{Architecture:} A Custom Convolutional Neural Network (CNN) built from scratch.
+    \item \textbf{Input:} Engineered to accept \textbf{16 channels} (the original 13 Sentinel-2 bands + the 3 engineered indices: NDVI, NDWI, NDBI).
+    \item \textbf{Performance:} Leveraged the deep spectral signatures (like Near-Infrared and Shortwave Infrared) to achieve superior class separation.
+\end{itemize}
+
+\section{Explainability \& Interpretation}
+To ensure the models are not just "black boxes," \textbf{Grad-CAM (Gradient-weighted Class Activation Mapping)} was implemented.
+
+\begin{itemize}
+    \item Grad-CAM generates heatmaps overlaying the original images, visually explaining which pixels the model focused on to make its prediction.
+    \item The analysis proved that the model correctly focused on spatial patterns (e.g., following the shape of a \textit{River} or the edges of a \textit{Highway}) rather than memorizing background noise.
+\end{itemize}
+
+\section{Results \& Key Observations}
+Based on the validation set evaluations (4,050 images), the models were compared head-to-head:
+
+\begin{itemize}
+    \item \textbf{RGB Model:} 3,906 Correct Predictions $\vert$ 144 Incorrect Predictions.
+    \item \textbf{Multispectral Model:} 4,007 Correct Predictions $\vert$ \textbf{Only 43 Incorrect Predictions.}
+\end{itemize}
+
+\textbf{Conclusion:} The Multispectral model significantly outperforms the RGB model. The addition of the 13 spectral bands combined with the engineered environmental indices (NDVI, NDWI, NDBI) provides a much richer dataset. It allows the model to easily separate classes that look identical to the naked eye (RGB), vastly reducing the confusion between dense vegetation, permanent crops, and herbaceous environments.
+
+\end{document}
