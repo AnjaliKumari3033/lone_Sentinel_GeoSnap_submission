@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dataset (don't upload)
+EuroSAT_Dataset/EuroSAT/
+EuroSAT_Dataset/EuroSATallBands/
+EuroSAT_Dataset/EuroSAT_test_flat/
+EuroSAT_Dataset/EuroSATallBands_test_flat/
+
+# Optional outputs
+outputs/predictions/
