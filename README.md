@@ -90,14 +90,15 @@ GEO-SNAP/
 │
 ├── outputs/
 │   ├── figures/
-│   ├── predictions/
-│   └── reports/
+│   └── predictions/
 │
 ├── training_logs/
 │   ├── training_logs_efficientnet.csv
 │   └── training_logs_multispectral.csv
 │
 ├── ms_band_stats.json
+│
+├── Report.tex
 │
 ├── requirements.txt
 │
