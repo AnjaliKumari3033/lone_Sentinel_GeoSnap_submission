@@ -1,6 +1,8 @@
 # 🌍 Geo-SNAP
 ### Geospatial Scene Classification using RGB and Multispectral Satellite Images
 
+## Team - Lone Sentinel
+
 Geo-SNAP is a deep learning project for land cover classification using the EuroSAT dataset. The project compares RGB and multispectral satellite imagery and studies how spectral information improves classification performance. It also includes explainability techniques and environmental analysis using remote sensing indices.
 
 ## 📌 Project Objectives
