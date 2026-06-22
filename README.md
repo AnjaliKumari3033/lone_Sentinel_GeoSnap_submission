@@ -96,13 +96,15 @@ GEO-SNAP/
 │   ├── training_logs_efficientnet.csv
 │   └── training_logs_multispectral.csv
 │
+├── .gitignore
+│
 ├── ms_band_stats.json
 │
-├── Report.tex
+├── README.md
 │
-├── requirements.txt
+├── Report.pdf
 │
-└── README.md
+└── requirements.txt
 ```
 # 📊 Exploratory Data Analysis (eda.ipynb)
 
