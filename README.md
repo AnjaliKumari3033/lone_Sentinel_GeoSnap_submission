@@ -2,6 +2,8 @@
 ### Geospatial Scene Classification using RGB and Multispectral Satellite Images
 
 ## Team - Lone Sentinel
+**Member:**
+- Anjali Kumari
 
 Geo-SNAP is a deep learning project for land cover classification using the EuroSAT dataset. The project compares RGB and multispectral satellite imagery and studies how spectral information improves classification performance. It also includes explainability techniques and environmental analysis using remote sensing indices.
 
@@ -9,7 +11,7 @@ Geo-SNAP is a deep learning project for land cover classification using the Euro
 
 - Classify satellite images into 10 land cover classes.
 - Compare RGB and multispectral image classification.
-- Analyze spectral characteristics of different land cover types.
+- Analyze spectral characteristics of different land cover classes.
 - Visualize model decisions using Grad-CAM.
 - Perform environmental analysis using NDVI, NDWI and NDBI.
 
@@ -38,13 +40,13 @@ EuroSAT_Dataset/
 │
 ├── EuroSAT/
 │   ├── train/
-│   ├── val/
-│   └── test/
+│   └── val/
+├── EuroSAT_test_flat/
 │
 ├── EuroSATallBands/
 │   ├── train/
-│   ├── val/
-│   └── test/
+│   └── val/
+├── EuroSATallBands_test_flat/
 │
 ├── train.csv
 └── validation.csv
@@ -83,12 +85,12 @@ GEO-SNAP/
 │   └── ms_model.py
 │
 ├── Notebooks/
-│   ├── eda.ipynb
-│   ├── training_analysis.ipynb
-│   ├── rgb_efficientnetb0.ipynb
-│   ├── Multispectral.ipynb
-│   ├── explainability.ipynb
-│   └── environmental_insights.ipynb
+│   ├── Task1_eda.ipynb
+│   ├── Task1_training_analysis.ipynb
+│   ├── Task1A_rgb_efficientnetb0.ipynb
+│   ├── Task1B_Multispectral.ipynb
+│   ├── Task2_explainability.ipynb
+│   └── Task3_environmental_insights.ipynb
 │
 ├── outputs/
 │   ├── figures/
@@ -266,7 +268,7 @@ Higher values indicate urban or industrial regions.
 Clone the repository
 
 ```bash
-git clone <repository_link>
+git clone https://github.com/AnjaliKumari3033/lone_Sentinel_GeoSnap_submission
 cd GEO-SNAP
 ```
 
@@ -313,13 +315,18 @@ The project generates:
 - Classification figures
 - Grad-CAM visualizations
 - Confusion matrices
-- Band importance plots
+- Spectral band importance plots
 - Environmental analysis plots
 - Prediction CSV files
-- Feature CSV files
+- Evaluation reports
 
 All outputs are saved inside:
 outputs/
+
+## 📄 Report
+
+A detailed project report describing the methodology, experiments, explainability analysis, environmental insights, and conclusions is included as:
+- Report.pdf
 
 # 📌 Key Observations
 
