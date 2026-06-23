@@ -268,7 +268,7 @@ Higher values indicate urban or industrial regions.
 Clone the repository
 
 ```bash
-git clone https://github.com/AnjaliKumari3033/lone_Sentinel_GeoSnap_submission
+git clone https://github.com/AnjaliKumari3033/LoneSentinel_GeoSnap_submission
 cd GEO-SNAP
 ```
 
