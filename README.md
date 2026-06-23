@@ -294,12 +294,12 @@ pip install -r requirements.txt
 
 Run notebooks in the following order:
 
-eda.ipynb
-rgb_efficientnetb0.ipynb
-Multispectral.ipynb
-training_analysis.ipynb
-explainability.ipynb
-environmental_insights.ipynb
+Task1_eda.ipynb
+Task1A_rgb_efficientnetb0.ipynb
+Task1B_Multispectral.ipynb
+Task1_training_analysis.ipynb
+Task2_explainability.ipynb
+Task3_environmental_insights.ipynb
 
 Ensure that:
 - Dataset folders are correctly placed.
